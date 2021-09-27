@@ -6,6 +6,7 @@ import com.naughty.userlogin02.bean.Goods;
 import com.naughty.userlogin02.bean.QueryInfo;
 import com.naughty.userlogin02.dao.GoodsDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 public class GoodsController {
@@ -23,18 +25,29 @@ public class GoodsController {
     @RequestMapping("/allGoods")
     public HashMap getGoodsList(QueryInfo queryInfo) {
         //获取最大列表数查询信息和当前编号
-        System.out.println(queryInfo);
-        int numbers = goodsDao.getGoodsCounts("%" + queryInfo.getQuery() +"%");
+        //System.out.println(queryInfo);
+        //int numbers = goodsDao.getGoodsCounts("%" + queryInfo.getQuery() +"%");
         //int pageStart = (queryInfo.getPageNum() - 1) - queryInfo.getPageSize();
 
-        List<Goods> goods = goodsDao.getAllGoods("%" + queryInfo.getQuery()+ "%");
+        List<Goods> goods = goodsDao.getAllGoods(queryInfo.getQuery());
+//        goods = goods.stream().map(item->{
+//            System.out.println(item.getName());
+//            return item;
+//        }).filter(item->1==1).collect(Collectors.toList());
         HashMap<String, Object> res = new HashMap<>();
-        res.put("numbers", numbers);
+       // res.put("numbers", numbers);
         res.put("data", goods);
-        System.out.println("总条数："+numbers);
+        //System.out.println("总条数："+numbers);
         return res;
     }
 
+//    @RequestMapping("/allGoodsByCode")
+//    public HashMap getGoodsListByCode(QueryInfo queryInfo){
+//        List<Goods> goods = goodsDao.getGoodsByCode("%" + queryInfo.getQuery()+ "%");
+//        HashMap<String, Object> resByCode = new HashMap<>();
+//        resByCode.put("data", goods);
+//        return resByCode;
+//    }
 
 
     //修改商品信息前获取信息
