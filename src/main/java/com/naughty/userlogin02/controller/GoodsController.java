@@ -40,14 +40,13 @@ public class GoodsController {
         //System.out.println("总条数："+numbers);
         return res;
     }
+    //添加商品
+    @RequestMapping("/addGoods")
+    public String getGoodsListByCode(Goods goods){
 
-//    @RequestMapping("/allGoodsByCode")
-//    public HashMap getGoodsListByCode(QueryInfo queryInfo){
-//        List<Goods> goods = goodsDao.getGoodsByCode("%" + queryInfo.getQuery()+ "%");
-//        HashMap<String, Object> resByCode = new HashMap<>();
-//        resByCode.put("data", goods);
-//        return resByCode;
-//    }
+        int i = goodsDao.addGoods(goods);
+        return i >0?"success":"error";
+    }
 
 
     //修改商品信息前获取信息
@@ -65,7 +64,10 @@ public class GoodsController {
         return str;
 
     }
-
-
+    @RequestMapping("/deleteGoods")
+        public String deleteGoods(int id){
+            int i = goodsDao.deleteGoods(id);
+            return i > 0?"success":"error";
+        }
 
 }

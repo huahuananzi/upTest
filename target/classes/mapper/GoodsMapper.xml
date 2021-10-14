@@ -25,11 +25,12 @@
         </if>
     </select>
 
-
+        <!--修改之前先获取数据-->
     <select id="getUpdateGoods" resultType="com.naughty.userlogin02.bean.Goods">
         SELECT * FROM goods WHERE id = #{id}
     </select>
 
+        <!--  修改-->
     <update id="editGoods">
         UPDATE goods SET code = #{code} ,identificationCode = #{identificationCode},
                name = #{name}, distributors = #{distributors},
@@ -37,7 +38,16 @@
         WHERE id = #{id}
     </update>
 
+        <!--添加商品-->
+    <insert id="addGoods">
+        INSERT INTO goods (code, identificationCode, name, distributors , purchasingPrice , sellingPrice)
+        VALUES (#{code},#{identificationCode},#{name},#{distributors},#{purchasingPrice},#{sellingPrice});
+    </insert>
 
+<!--    删除商品-->
+<delete id="deleteGoods">
+    DELETE FROM goods WHERE id = #{id}
+</delete>
 
 
     </mapper>

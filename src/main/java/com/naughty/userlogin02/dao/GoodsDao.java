@@ -11,10 +11,8 @@ import java.util.List;
 @Repository
 public interface GoodsDao {
     public List<Goods> getAllGoods(@Param("name") String name);
-    //public List<Goods> getGoodsByCode(@Param("identificationCode") String identificationCode);
-    //public int getGoodsCounts(@Param("name") String name);
     public int editGoods(Goods goods);
     public Goods getUpdateGoods(int id);
     public int addGoods(Goods goods);
-    //public Goods getGoodsByIdentificationCode(int id);
+    public int deleteGoods(int id);
 }
