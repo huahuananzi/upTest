@@ -59,7 +59,6 @@ public class UserConteroller {
         String users_json = JSON.toJSONString(updateUser);
         return users_json;
     }
-
     @RequestMapping("/editUser")
     public String editUser(@RequestBody User user){
         System.out.println(user);

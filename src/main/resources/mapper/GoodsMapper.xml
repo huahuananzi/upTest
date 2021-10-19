@@ -32,7 +32,7 @@
         <!--添加商品-->
     <insert id="addGoods">
         INSERT INTO goods (code, identificationCode, name, distributors , purchasingPrice , sellingPrice)
-        VALUES (#{code},#{identificationCode},#{name},#{distributors},#{purchasingPrice},#{sellingPrice});
+        VALUES (#{code},#{identificationCode},#{name},#{distributors},#{purchasingPrice},#{sellingPrice})
     </insert>
 
 <!--    删除商品-->

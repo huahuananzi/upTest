@@ -16,15 +16,6 @@
     </select>
 
 
-
-
-    <select id="getGoodsCounts" resultType="java.lang.Integer">
-        SELECT count(*) FROM goods
-        <if test="name !=null ">
-            WHERE name like #{name}
-        </if>
-    </select>
-
         <!--修改之前先获取数据-->
     <select id="getUpdateGoods" resultType="com.naughty.userlogin02.bean.Goods">
         SELECT * FROM goods WHERE id = #{id}
@@ -41,7 +32,7 @@
         <!--添加商品-->
     <insert id="addGoods">
         INSERT INTO goods (code, identificationCode, name, distributors , purchasingPrice , sellingPrice)
-        VALUES (#{code},#{identificationCode},#{name},#{distributors},#{purchasingPrice},#{sellingPrice});
+        VALUES (#{code},#{identificationCode},#{name},#{distributors},#{purchasingPrice},#{sellingPrice})
     </insert>
 
 <!--    删除商品-->

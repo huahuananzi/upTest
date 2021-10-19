@@ -42,7 +42,7 @@ public class GoodsController {
     }
     //添加商品
     @RequestMapping("/addGoods")
-    public String getGoodsListByCode(Goods goods){
+    public String addGoods(@RequestBody Goods goods){
 
         int i = goodsDao.addGoods(goods);
         return i >0?"success":"error";
@@ -64,6 +64,7 @@ public class GoodsController {
         return str;
 
     }
+    //删除商品
     @RequestMapping("/deleteGoods")
         public String deleteGoods(int id){
             int i = goodsDao.deleteGoods(id);
