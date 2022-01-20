@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.naughty.userlogin02.dao.SupplierDao">
+
+    <select id="getAllSupplier" resultType="com.naughty.userlogin02.bean.Supplier">
+
+    SELECT *
+    FROM supplier
+    WHERE 1=1
+    <if test="name!='' and name!=null">
+        and  (name like CONCAT('%',#{name,jdbcType=VARCHAR},'%') or id like CONCAT('%',#{name,jdbcType=VARCHAR},'%') or phone like CONCAT('%',#{name,jdbcType=VARCHAR},'%'))
+    </if>
+
+    </select>
+
+
+
+
+
+</mapper>

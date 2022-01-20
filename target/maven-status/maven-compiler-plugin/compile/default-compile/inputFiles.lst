@@ -5,10 +5,13 @@ D:\java_sport\src\main\java\com\naughty\userlogin02\Userlogin02Application.java
 D:\java_sport\src\main\java\com\naughty\userlogin02\controller\GoodsController.java
 D:\java_sport\src\main\java\com\naughty\userlogin02\bean\Goods.java
 D:\java_sport\src\main\java\com\naughty\userlogin02\controller\MenuController.java
+D:\java_sport\src\main\java\com\naughty\userlogin02\bean\Supplier.java
 D:\java_sport\src\main\java\com\naughty\userlogin02\bean\MainMenu.java
 D:\java_sport\src\main\java\com\naughty\userlogin02\util\WebConfig.java
 D:\java_sport\src\main\java\com\naughty\userlogin02\controller\UserConteroller.java
 D:\java_sport\src\main\java\com\naughty\userlogin02\dao\GoodsDao.java
 D:\java_sport\src\main\java\com\naughty\userlogin02\dao\MenuDao.java
+D:\java_sport\src\main\java\com\naughty\userlogin02\dao\SupplierDao.java
 D:\java_sport\src\main\java\com\naughty\userlogin02\bean\QueryInfo.java
 D:\java_sport\src\main\java\com\naughty\userlogin02\bean\SubMenu.java
+D:\java_sport\src\main\java\com\naughty\userlogin02\controller\SupplierController.java
